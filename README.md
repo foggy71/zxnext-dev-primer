@@ -19,9 +19,22 @@ I deliberately call out all three platforms because I want to ensure this guide 
 
 [Boriel Basic](https://zxbasic.readthedocs.io/en/docs/) seems to provide a good balance between power, performance and complexity. Using the NextLib library for Boriel gives access to most (all?) of the Next's unique hardware features.  Boriel Basic is also a good choice for development for other Z80 based systems so there is lots of books, articles and forums for help as well as some IDE support. Many games have been written using Boriel Basic - including some "Crash Smash"-es.
 
+> Warning
+>
+> I recall reading that not all version of the Boriel Basic compiler work with all versions of NextLib.  Can't find the reference at the moment.
+
 Options ruled out:
 
 - [NextBASIC](https://wiki.specnext.dev/NextBASIC) - Easy to use, ok performance and new commands cover all the Next's unique hardware features.  Isn't compiled and doesn't support inline Assembly.
 - [C with z88dk](https://github.com/z88dk/z88dk) - High performance and libraries cover most (all?) Next's unique hardware features. Steep learning curve. Good choice for those already proficient in C.
 - [ASM with sjasmplus](https://github.com/z00m128/sjasmplus) - Ultimate performance and hardware access.  Super hard mode!  Good choice for those already proficient in assembly language.
 
+## IDE: Visual Studio Code + 
+
+Visual Studio Code (VS Code) is probably one of the most popular free coding environments.  Its free and cross-platform. Yes **you** can use VIM if you like - I'm trying to make things simple.  A custom IDE would probably give the smoothest experience but it will be hard to compete with the quality of life features and support of VS CodeThe VS Code extension [ZX Basic](https://marketplace.visualstudio.com/items?itemName=jsjlogin.zxbasic) provides syntax highlighting support.
+
+Options ruled out:
+
+- [BorIDE](https://github.com/em00k/NextBuild/tree/master/BorIDE) - Bundled with NextBuild.  Abandoned?
+- [ZXBasicStudio](https://github.com/boriel-basic/ZXBasicStudio) - A custom built IDE for Boriel Basic.
+- (NEW) [NextBuildStudio](https://github.com/em00k/NextBuildStudio) - New kid on the block.  In closed Beta. One for the future?
