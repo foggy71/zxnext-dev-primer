@@ -42,7 +42,7 @@ Options ruled out:
 
 For future consideration: 
 
-- (New) [NextBuildStudio](https://github.com/em00k/NextBuildStudio) - New kid on the block.  Currently in closed beta.
+- (New) [NextBuild Studio](https://github.com/em00k/NextBuildStudio) - New kid on the block.  Currently in closed beta.
 
 ## (Game Dev) Sprite Editor: Remy's Sprite Editor (Needs more investigation)
 
@@ -55,7 +55,7 @@ Options ruled out:
 
 For future consideration:
 
-- (New) [NextBuildStudio's Sprite Editor](https://github.com/em00k/NextBuildStudio) - New kid on the block.  Currently in closed beta.
+- (New) [NextBuild Studio's Sprite Editor](https://github.com/em00k/NextBuildStudio) - New kid on the block.  Currently in closed beta.
 
 ## (Game Dev) Music/Sound Editor: Remy's AYFX Editor (Needs more investigation)
 
@@ -68,7 +68,7 @@ Options ruled out:
 For future consideration:
 
 - [Arkos Tracker](https://www.julien-nevo.com/arkostracker/index.php/download/) - Looks fully featured is free and cross platform.
-- (New) [NextBuildStudio's AYFX Editor](https://github.com/em00k/NextBuildStudio) - New kid on the block.  Currently in closed beta.
+- (New) [NextBuild Studio's AYFX Editor](https://github.com/em00k/NextBuildStudio) - New kid on the block.  Currently in closed beta.
 
 ## Emulator: CSpect (Needs more investigation)
 
