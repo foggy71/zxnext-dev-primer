@@ -51,7 +51,7 @@ For future consideration:
 Options ruled out:
 
 - [UDGeeNext](https://www.specnext.com/forum/viewtopic.php?f=7&t=351) - Bundled with NextBuild. Windows-only so would require Wine or similar. Abandoned?
-- [Aseprite](https://www.aseprite.org) with [Spectre Plugins] - Richly featured sprite editor which I believe is free if you compile from source.  Spectre plugins make Next compatible assets. Compilation needs investigation - if easy could be good choice.
+- [Aseprite](https://www.aseprite.org) with [Spectre Plugins](https://github.com/spectrepaul/blog/tree/main) - Richly featured cross platform sprite editor, which I believe is free, if you compile from source.  Spectre plugins make Next compatible assets. Compilation needs investigation - if easy could be good choice.
 
 For future consideration:
 
@@ -72,7 +72,7 @@ For future consideration:
 
 ## Emulator: CSpect (Needs more investigation)
 
-[CSpect](https://mdf200.itch.io/cspect) seems to be the most common choice.  Not sure why?  It does seem more user friendly and maybe has more useful tools for development. It is a .Net binary so needs Mono installed.
+[CSpect](https://mdf200.itch.io/cspect) seems to be the most common choice.  Said to be more user friendly and suitable for development. Has a builtin in debugger but unless your developing in asm then not really that useful. It is a .NET binary so needs Mono installed :(.
 
 Options ruled out:
 
@@ -105,7 +105,7 @@ Pick apart NextBuild somehow to allow me to remove redundant tools and use GitHu
 
 ### (New) NextBuild Studio
 
-NextBuild Studio from its description looks amazing.  However, the only build currently available is a Windows only build so I'd have to mess about with Wine to evaluate how this works.  I'm waiting on a MacOS build.
+NextBuild Studio from its description looks amazing.  Based on VS Code + Boriel Basic with built-in sprite and audi editor. However, the only build currently available is a Windows only build so I'd have to mess about with Wine to evaluate how this works.  I'm waiting on a MacOS build.
 
 If it:
 
