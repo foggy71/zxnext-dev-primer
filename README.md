@@ -46,20 +46,28 @@ For future consideration:
 
 ## (Game Dev) Sprite Editor: Remy's Sprite Editor (Needs more investigation)
 
-[Remy's Sprite Editor](https://zx.remysharp.com/sprites/)  is a basic free online (works offline too) sprite editor that runs in the browser and seems to have basic functionality required.
+[Remy's Sprite Editor](https://zx.remysharp.com/sprites/)  is a beginner-friendly free online (works offline too) sprite editor that runs in the browser and seems to have basic functionality required.
 
 Options ruled out:
 
 - [UDGeeNext](https://www.specnext.com/forum/viewtopic.php?f=7&t=351) - Bundled with NextBuild. Windows-only so would require Wine or similar. Abandoned?
-- [Aseprite](https://www.aseprite.org) with [Spectre Plugins](https://github.com/spectrepaul/blog/tree/main) - Richly featured cross platform sprite editor, which I believe is free, if you compile from source.  Spectre plugins make Next compatible assets. Compilation needs investigation - if easy could be good choice.
 
 For future consideration:
 
+- [Aseprite](https://www.aseprite.org) with [Spectre Plugins](https://github.com/spectrepaul/blog/tree/main) - Richly featured cross platform sprite editor, which I believe is free, if you compile from source.  Spectre plugins make Next compatible assets. Compilation needs investigation - if easy could be good choice.
 - (New) [NextBuild Studio's Sprite Editor](https://github.com/em00k/NextBuildStudio) - New kid on the block.  Currently in closed beta.
+
+## (Game Dev) Tile Map Editor: Remy's Tile Map Editor (Needs more investigation)
+
+[Remy's Tile Map Editor]([https://zx.remysharp.com/sprites/](https://zx.remysharp.com/sprites/#tiles))  is a beginner-friendly free online (works offline too) tile map editor that runs in the browser and seems to have basic functionality required.
+
+For future consideration
+- [Tiled](https://thorbjorn.itch.io/tiled) with [Spectre Plugins](https://github.com/spectrepaul/blog/tree/main) - Richly featured cross platform tile map editor which you can pay what you want.  Spectre plugins make Next compatible assets.
+- (New) [NextBuild Studio's Map Editor](https://github.com/em00k/NextBuildStudio) - New kid on the block.  Currently in closed beta.
 
 ## (Game Dev) Music/Sound Editor: Remy's AYFX Editor (Needs more investigation)
 
-[Remy's AYFX Editor](https://zx.remysharp.com/audio)  is a basic free online (works offline too) audio editor that runs in the browser and seems to have the basic functionality required.
+[Remy's AYFX Editor](https://zx.remysharp.com/audio)  is a beginner-friendly free online (works offline too) audio editor that runs in the browser and seems to have the basic functionality required.
 
 Options ruled out:
 
@@ -79,33 +87,52 @@ Options ruled out:
 - [ZEsarUX](https://github.com/chernandezba/zesarux) - Has many more features, and can emulate many different platforms but is perhaps a bit more complex to use?  More suitable for users than for development?
 
 
-## Putting It Together:  Undecided
+## Putting It Together:  Unclear
 
 How are all these tools installed and kept up-to-date?
 
-The options I am considering:
+The options worth considering:
 
-### NextBuild + Remy's Website
+### Option 1: NextBuild + Remy's Specturm Tools Website
 
-The NextBuild project is designed to make it easy for developers to install and configure their dev environments.  Fork the  project then clone your own project to your workstation. Opening the `Sources` folder in VS Code should be all that's required for installation. Choose your example and use the provided VS Code tasks to build and run. For sprite and sound tools use Remy's online tools. Simple.
+The [NextBuild](https://github.com/em00k/NextBuild) project is designed to make it easy for developers to install and configure their dev environments.  This would involve:
+
+- Install VS Code
+- Install Python + Mono on dev machine
+- Fork the  project then clone your own project to your dev machine.
+- Open the `Sources` folder in VS Code
+- Choose your example and use the provided VS Code tasks to build and run. For sprite and sound tools use Remy's online tools. Simple.
 
 Tool and library updates can be managed by Git rebasing your fork on the upstream project. A bit fiddly.
 
-The problems I have with NextBuild are:
+> I have some concerns with NextBuild:
+> 
+> - It contains some redundant tools for my needs - namely BorIDE and UDGeeNext,
+> - It looks to have a lot of Windows specific scripting - though it has been said non Windows users are using it successfully.
+> - As a developer I don't like storing all my projects in a single Git repository.  I understand this makes it easy to configure, but I just don't like the clutter of having all these projects in `Sources` folder and having to add my new folders for my own projects there.  It doesn't fit with how I normally work as a developer - where I store each project in its own Git repository.  Alternatively duplicating this project with 
+> - It seems to contain two copies of NextLib - one in Scripts and one in zxbasic.  Which one is used?
+> - It's a bit weird storing application binaries in Git.
 
-- I don't like storing all the projects in a single Git repository.  I understand this makes it easy to configure., but I just don't like the clutter of having all these projects in `Sources` folder and having to add my new folders for my own projects there.  It doesn't fit with how I normally work as a developer - where I store each project in its own Git repository.
-- It contains some redundant tools for my needs - namely BorIDE and UDGeeNext,
-- It seems to contain two copies of NextLib - one in Scripts and one in zxbasic.  Which one is used?
-- It's a bit weird storing applications in Git.
+### Option 2: NextBuild fork + Project Template + Remy's Specturm Tools Website
 
+Address the issues with NextBuild by forking the project to:
 
-### DIY based on NextBuild + Remy's Website
+-  Remove BorIDE, UDGeeNext
+-  Remove all .bat files
+-  Remove NextBuildLaucher.exe
+-  Set env vars to point at tools
 
-Pick apart NextBuild somehow to allow me to remove redundant tools and use GitHub to store each project separately.
+Create a reusable project template used as the basis for each dev project:
 
-### (New) NextBuild Studio
+- Copy folder .vscode from NextBuild
+- Update task paths to use env vars
+- Need to address tasks using powershell
+  - Could probably remove task "Update Nextbuild..."
+  - What to do with task "Run compiled TAP"
 
-NextBuild Studio from its description looks amazing.  Based on VS Code + Boriel Basic with built-in sprite and audi editor. However, the only build currently available is a Windows only build so I'd have to mess about with Wine to evaluate how this works.  I'm waiting on a MacOS build.
+### (New) Option 3: NextBuild Studio
+
+NextBuild Studio from its description looks amazing.  Based on VS Code + Boriel Basic with built-in sprite and audio editor. However, the only build currently available is a Windows only build so I'd have to mess about with Wine to evaluate how this works.  I'm waiting on a MacOS build.
 
 If it:
 
