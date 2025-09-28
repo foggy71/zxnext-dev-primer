@@ -33,7 +33,7 @@ Options ruled out:
 
 ## IDE: Visual Studio Code
 
-Visual Studio Code (VS Code) is probably one of the most popular free coding environments.  Its free and cross-platform. Yes **you** can use VIM if you like - I'm trying to make things simple.  A custom IDE would probably give the smoothest experience but it will be hard to compete with the quality of life features and support of VS CodeThe VS Code extension [ZX Basic](https://marketplace.visualstudio.com/items?itemName=jsjlogin.zxbasic) provides syntax highlighting support.
+[Visual Studio Code](https://code.visualstudio.com) (VS Code) is probably one of the most popular free coding environments.  Its free and cross-platform. Yes **you** can use VIM if you like - I'm trying to make things simple.  A custom IDE would probably give the smoothest experience but it will be hard to compete with the quality of life features and support of VS CodeThe VS Code extension [ZX Basic](https://marketplace.visualstudio.com/items?itemName=jsjlogin.zxbasic) provides syntax highlighting support.
 
 Options ruled out:
 
@@ -59,7 +59,7 @@ For future consideration:
 
 ## (Game Dev) Tile Map Editor: Remy's Tile Map Editor (Needs more investigation)
 
-[Remy's Tile Map Editor]([https://zx.remysharp.com/sprites/](https://zx.remysharp.com/sprites/#tiles))  is a beginner-friendly free online (works offline too) tile map editor that runs in the browser and seems to have basic functionality required.
+[Remy's Tile Map Editor](https://zx.remysharp.com/sprites/#tiles)  is a beginner-friendly free online (works offline too) tile map editor that runs in the browser and seems to have basic functionality required.
 
 For future consideration
 - [Tiled](https://thorbjorn.itch.io/tiled) with [Spectre Plugins](https://github.com/spectrepaul/blog/tree/main) - Richly featured cross platform tile map editor which you can pay what you want.  Spectre plugins make Next compatible assets.
@@ -80,7 +80,7 @@ For future consideration:
 
 ## Emulator: CSpect (Needs more investigation)
 
-[CSpect](https://mdf200.itch.io/cspect) seems to be the most common choice.  Said to be more user friendly and suitable for development. Has a builtin in debugger but unless your developing in asm then not really that useful. It is a .NET binary so needs Mono installed :(.
+[CSpect](https://mdf200.itch.io/cspect) seems to be the most common choice.  Reportedly more user friendly and suitable for development. Has a built-in in debugger but unless developing in asm then is it that useful. It is a .NET binary so needs Mono installed :(.
 
 Options ruled out:
 
@@ -99,36 +99,36 @@ The [NextBuild](https://github.com/em00k/NextBuild) project is designed to make 
 
 - Install VS Code
 - Install Python + Mono on dev machine
-- Fork the  project then clone your own project to your dev machine.
+- Copy project zip to dev machine.
 - Open the `Sources` folder in VS Code
-- Choose your example and use the provided VS Code tasks to build and run. For sprite and sound tools use Remy's online tools. Simple.
+- Choose your example and use the provided VS Code tasks to build and run.
+- For sprite and sound tools use Remy's online tools.
 
-Tool and library updates can be managed by Git rebasing your fork on the upstream project. A bit fiddly.
+Tool and library updates can be through VS Code Task (Needs Powershell?)
 
 > I have some concerns with NextBuild:
 > 
 > - It contains some redundant tools for my needs - namely BorIDE and UDGeeNext,
-> - It looks to have a lot of Windows specific scripting - though it has been said non Windows users are using it successfully.
-> - As a developer I don't like storing all my projects in a single Git repository.  I understand this makes it easy to configure, but I just don't like the clutter of having all these projects in `Sources` folder and having to add my new folders for my own projects there.  It doesn't fit with how I normally work as a developer - where I store each project in its own Git repository.  Alternatively duplicating this project with 
+> - It looks to have a lot of Windows specific scripting - though it has been said non-Windows users are using it successfully.
+> - As a developer I don't like storing all my projects in a single Git repository.  I understand this makes it easy to configure, but I just don't like the clutter of having all these projects in `Sources` folder and having to add my new folders for my own projects there.  It doesn't fit with how I normally work as a developer - where I store each project in its own Git repository.  Alternatively duplicating NextBuild for each project seems inefficient.
 > - It seems to contain two copies of NextLib - one in Scripts and one in zxbasic.  Which one is used?
 > - It's a bit weird storing application binaries in Git.
 
 ### Option 2: NextBuild fork + Project Template + Remy's Specturm Tools Website
 
-Address the issues with NextBuild by forking the project to:
+Address some of the issues with NextBuild by forking the project to:
 
 -  Remove BorIDE, UDGeeNext
 -  Remove all .bat files
 -  Remove NextBuildLaucher.exe
 -  Set env vars to point at tools
 
-Create a reusable project template used as the basis for each dev project:
+Create a reusable project template used as the basis for each new dev project which has `.vscode` folder from NextBuild but:
 
-- Copy folder .vscode from NextBuild
 - Update task paths to use env vars
-- Need to address tasks using powershell
+- Address tasks using powershell
   - Could probably remove task "Update Nextbuild..."
-  - What to do with task "Run compiled TAP"
+  - What to do with task "Run compiled TAP"?
 
 ### (New) Option 3: NextBuild Studio
 
