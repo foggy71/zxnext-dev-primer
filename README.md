@@ -87,13 +87,13 @@ Options ruled out:
 - [ZEsarUX](https://github.com/chernandezba/zesarux) - Has many more features, and can emulate many different platforms but is perhaps a bit more complex to use?  More suitable for users than for development?
 
 
-## Putting It Together:  Unclear
+## Putting It Together:  Unclear (Needs More Invesitgation)
 
 How are all these tools installed and kept up-to-date?
 
 The options worth considering:
 
-### Option 1: NextBuild + Remy's Specturm Tools Website
+### Option 1: NextBuild + Remy's Spectrum Tools Website
 
 The [NextBuild](https://github.com/em00k/NextBuild) project is designed to make it easy for developers to install and configure their dev environments.  This would involve:
 
@@ -114,21 +114,18 @@ Tool and library updates can be through VS Code Task (Needs Powershell?)
 > - It seems to contain two copies of NextLib - one in Scripts and one in zxbasic.  Which one is used?
 > - It's a bit weird storing application binaries in Git.
 
-### Option 2: NextBuild fork + Project Template + Remy's Specturm Tools Website
+### Option 2: Project Template + Remy's Spectrum Tools Website
 
-Address some of my difficulties with NextBuild by forking the project to:
+Create a reusable project template Git repository used as the basis for each new dev project. The template project has the `.vscode` folder from NextBuild but:
 
--  Remove BorIDE, UDGeeNext
--  Remove all .bat files
--  Remove NextBuildLaucher.exe
--  Set env vars to point at tools
-
-Create a reusable project template used as the basis for each new dev project. The template project has the `.vscode` folder from NextBuild but:
-
-- Update task paths to use env vars
+- Update task paths to use env var `NEXTBUILD_HOME`
 - Address tasks using powershell
   - Could probably remove task "Update Nextbuild..."
   - What to do with task "Run compiled TAP"?
+ 
+Set NEXTBUILD_HOME env var in user profile.
+
+Each time you want to start a new project download the template project zip or use a tool like [layout](https://github.com/reddec/layout) e.g. `layout new foggy71/zxnext-template`
 
 ### (New) Option 3: NextBuild Studio
 
