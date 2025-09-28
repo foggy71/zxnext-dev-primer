@@ -106,24 +106,24 @@ The [NextBuild](https://github.com/em00k/NextBuild) project is designed to make 
 
 Tool and library updates can be through VS Code Task (Needs Powershell?)
 
-> I have some concerns with NextBuild:
+> I have some difficulties with NextBuild:
 > 
-> - It contains some redundant tools for my needs - namely BorIDE and UDGeeNext,
-> - It looks to have a lot of Windows specific scripting - though it has been said non-Windows users are using it successfully.
-> - As a developer I don't like storing all my projects in a single Git repository.  I understand this makes it easy to configure, but I just don't like the clutter of having all these projects in `Sources` folder and having to add my new folders for my own projects there.  It doesn't fit with how I normally work as a developer - where I store each project in its own Git repository.  Alternatively duplicating NextBuild for each project seems inefficient.
+> - It contains some tools that aren't easy for me to run - namely BorIDE and UDGeeNext (these might be abandoned?),
+> - I think it has been recently re-worked to use Python scripts to perform builds (which is good) but the older Windows-specific scripting is still there (for backwards compatibility?)
+> - Adding my own projects to the `Sources` folder which contains the examples is not a way I'm used to working.
 > - It seems to contain two copies of NextLib - one in Scripts and one in zxbasic.  Which one is used?
 > - It's a bit weird storing application binaries in Git.
 
 ### Option 2: NextBuild fork + Project Template + Remy's Specturm Tools Website
 
-Address some of the issues with NextBuild by forking the project to:
+Address some of my difficulties with NextBuild by forking the project to:
 
 -  Remove BorIDE, UDGeeNext
 -  Remove all .bat files
 -  Remove NextBuildLaucher.exe
 -  Set env vars to point at tools
 
-Create a reusable project template used as the basis for each new dev project which has `.vscode` folder from NextBuild but:
+Create a reusable project template used as the basis for each new dev project. The template project has the `.vscode` folder from NextBuild but:
 
 - Update task paths to use env vars
 - Address tasks using powershell
@@ -132,7 +132,7 @@ Create a reusable project template used as the basis for each new dev project wh
 
 ### (New) Option 3: NextBuild Studio
 
-NextBuild Studio from its description looks amazing.  Based on VS Code + Boriel Basic with built-in sprite and audio editor. However, the only build currently available is a Windows only build so I'd have to mess about with Wine to evaluate how this works.  I'm waiting on a MacOS build.
+NextBuild Studio from its description looks amazing.  Based on VS Code + Boriel Basic with built-in sprite and audio editor. However, the only build currently available is a Windows only build so I'd have to mess about with Wine to evaluate how this works.  I'm waiting on a MacOS build :).
 
 If it:
 
